@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.header {
+  padding: 2rem;
+  background: url("buildings-217878_1280.jpg") no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+}
+
+.title p:last-child {
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+form {
+  min-width: 200px;
+  width: 20%;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+}
+
+form label {
+  display: none;
+}
+
+form input {
+  padding-left: 4%;
+  width: 80%;
+  font-size: 1rem;
+  border: none;
+}
+
+form input:focus {
+  outline: none;
+}
+
+form button {
+  width: 20%;
+  border: transparent;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .form {
+    width: 70%;
+    height: 2.5rem;
+    margin-top: 4%;
+  }
+}
+
+/*Estilização da barra de navegação*/
+
+nav {
+  padding-left: 7%;
+  box-shadow: 0 4px 8px 2px #000000ad;
+  overflow: hidden;
+}
+
+/*Estilização do menu hamburguer*/
+
+.menu-hamb-toggle {
+  display: none;
+  font-size: 1.5rem;
+  border: none;
+  background-color: transparent;
+}
+
+.menu-hamb {
+  padding: 0.5% 0;
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  list-style-type: none;
+}
+
+/*Estilização do menu dropdown*/
+
+.dropdown-toggle {
+  margin: 0.5% 0;
+  padding: 5% 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #000000ad;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-toggle i {
+  margin-left: 1%;
+  font-size: 0.5rem;
+}
+
+.dropdown-content {
+  margin-top: 1%;
+  padding: 0 0.5%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #00000041;
+  position: absolute;
+  background-color: #fff;
+  /*Transiçao de subida e descida com a prop. max-height*/
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  transform: translateY(-10px);
+  transition:  0.5s ease;
+}
+
+.dropdown-item {
+  margin: 2% 0;
+  padding: 3% 0;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 2% 3%;
+  }
+
+  .menu-hamb-toggle {
+    display: block;
+  }
+
+  .menu-hamb {
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    transition: 0.6s ease;
+    overflow: hidden;
+  }
+
+  .dropdown-toggle {
+    padding: 2%;
+  }
+
+  .dropdown,
+  .dropdown-content,
+  .dropdown-item {
+    margin: 0;
+    position: relative;
+  }
+}
+
+.show {
+  display: flex;
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;  
+  transform: translateY(0);
+}
+
+.toggle-color {
+  background-color: rgb(196, 196, 196);
+}
