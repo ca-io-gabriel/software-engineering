@@ -52,6 +52,7 @@ def find_book_by_title():
     for book in books:
         if book.title == title:
             print(f"{book.title}, {book.author} ({book.genre}); quantidade: {book.quantity}.\n")
+            return
 
     print("Livro nao encontrado.")
 
