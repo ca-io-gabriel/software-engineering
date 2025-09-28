@@ -1,7 +1,7 @@
 """
     Este código e um modelo de Machine Learning que classifica
     espécies de flores Iris com base em características
-    como comprimento e largura das sépalas e pétalas.
+    como comprimento e largura das sepalas e petalas.
 """
 
 # Importando as libs que serao usadas
@@ -12,7 +12,6 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 
 # Carregando os dados das flores
-
 iris = load_iris()
 X = iris.data
 y = iris.target
