@@ -29,7 +29,7 @@ model = tf.keras.Sequential([
     tf.keras.layers.Input(shape=(X_train_scaled.shape[1],)), # Camada de entrada
     tf.keras.layers.Dense(16, activation='relu'), # Camada escondida com ativação ReLU
     tf.keras.layers.Dense(12, activation='relu'), # Camada escondida com ativação ReLU
-    tf.keras.layers.Dense(3, activation='softmax') # Camada escondida com ativação SoftMax
+    tf.keras.layers.Dense(3, activation='softmax') # Camada de saída com ativação SoftMax
 ])
 
 model.compile(
@@ -57,13 +57,13 @@ loss, acc = model.evaluate(X_test_scaled, y_test, verbose=0)
 print(f'\nAvaliação no conjunto de teste: loss = {loss:.4f}, accuracy = {acc:.4f}')
 
 # Testando o modelo
-novas_amostras = np.array([
+new_samples = np.array([
     [5.1, 3.5, 1.4, 0.2],  # Setosa
     [6.0, 2.9, 4.5, 1.5],  # Versicolor
     [6.9, 3.1, 5.4, 2.1]  # Virginica
 ])
 
-new_samples_scaled = scaler.transform(novas_amostras)
+new_samples_scaled = scaler.transform(new_samples)
 probs = model.predict(new_samples_scaled)
 pred_classes = np.argmax(probs, axis=1)
 
@@ -73,6 +73,6 @@ print("Saídas esperadas: "
       "\n Amostra 3: Iris Virginica"
       )
 
-for i, sample in enumerate(novas_amostras):
+for i, sample in enumerate(new_samples):
     print(f"\nAmostra {i + 1}: {sample}")
     print(f"Iris: {target_names[pred_classes[i]]} (probabilidades: {probs[i]})")
