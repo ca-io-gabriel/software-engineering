@@ -17,7 +17,6 @@ def db_connect():
     )
     ''')
 
-    """
     cursor.execute('''
     INSERT INTO vendas1 (data_venda, produto, categoria, valor_venda) VALUES
     ('2023-01-01', 'Produto A', 'Eletrônicos', 1500.00),
@@ -35,7 +34,6 @@ def db_connect():
     ('2023-11-15', 'Produto M', 'Eletrônicos', 900.00),
     ('2023-12-20', 'Produto N', 'Livros', 250.00);
     ''')
-    """
 
     conexao.commit()
 
