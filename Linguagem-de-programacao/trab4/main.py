@@ -59,14 +59,20 @@ print(f'\nAvaliação no conjunto de teste: loss = {loss:.4f}, accuracy = {acc:.
 
 # Testando o modelo
 novas_amostras = np.array([
-    [5.1, 3.5, 1.4, 0.2],  # Deve retornar a iris setosa
-    [6.0, 2.9, 4.5, 1.5],  # Deve retornar a iris versicolor
-    [6.9, 3.1, 5.4, 2.1]  # Deve retornar a iris virginica
+    [5.1, 3.5, 1.4, 0.2],  # Setosa
+    [6.0, 2.9, 4.5, 1.5],  # Versicolor
+    [6.9, 3.1, 5.4, 2.1]  # Virginica
 ])
 
 new_samples_scaled = scaler.transform(novas_amostras)
 probs = model.predict(new_samples_scaled)
 pred_classes = np.argmax(probs, axis=1)
+
+print("Saídas esperadas: "
+      "\n Amostra 1: Iris Setosa"
+      "\n Amostra 2: Iris Versicolor"
+      "\n Amostra 3: Iris Virginica"
+      )
 
 for i, sample in enumerate(novas_amostras):
     print(f"\nAmostra {i + 1}: {sample}")
