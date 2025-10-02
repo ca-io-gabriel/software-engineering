@@ -44,7 +44,7 @@ int main() {
     liquidSalary = calcular_salario_liquido(grossSalary, discount);
 
     //Imprimindo os valores na tela
-    printf("\nO seu salario bruto e: R$ %d.00", grossSalary);
+    printf("\nO seu salario bruto e: R$ %.2f", grossSalary);
     printf("\nO desconto aplicado no seu salario e de: R$ %.2f", discount);
     printf("\nO seu salario liquido e: R$ %.2f", liquidSalary);
 
